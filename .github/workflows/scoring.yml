@@ -39,15 +39,7 @@ jobs:
         with:
           result-encoding: string
           script: |
-            const payload = require('/tmp/payload.json');
-
-            const startAt = new Date('2022-08-04T18:00:00.000+09:00');
-            const endAt = new Date('2022-08-05T20:00:00.000+09:00');
-            const requestedAt = new Date(payload.request_time);
-
-            if (requestedAt < startAt || endAt < requestedAt) {
-              return 'closed';
-            }
+            // force oneced for debugging
             return 'opened';
   vrt:
     runs-on: ubuntu-20.04

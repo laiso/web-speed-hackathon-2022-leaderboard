@@ -35,7 +35,7 @@ async function main() {
   await fs.ensureDir(exportPath);
 
   for (const viewport of viewportList) {
-    for (const page of pageList) {
+    pageList.forEach(async (page) => {
       const url = new URL(page.path, baseUrl).href;
       const buffer = await captureScreenshot({
         url,
